@@ -14,7 +14,7 @@ class Voice_Assistant:
             Voice_Assistant.AI(response)
 
     def AI(x):
-        palm.configure(api_key='AIzaSyB9sslPFgMyFQaXMCB7y-jaXauDNM-NHG8')
+        palm.configure(api_key='')
         models = [m for m in palm.list_models() if 'generateText' in m.supported_generation_methods]
         model = models[0].name
 
