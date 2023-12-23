@@ -9,17 +9,9 @@ class Voice_Assistant:
     
     def AI(x):
         palm.configure(api_key='')
-        models = [m for m in palm.list_models() if 'generateText' in m.supported_generation_methods]
-        model = models[0].name
+        palm.chat(messages = x)
 
-        completion = palm.generate_text(
-                model = model,
-                prompt = x,
-                temperature = 1,
-                max_output_tokens = 150,
-                )
-
-        Voice_Assistant.speak(completion.result)
+        Voice_Assistant.speak(completion.last)
 
     def speak(y):
         print(f'SyBot: {y}')
