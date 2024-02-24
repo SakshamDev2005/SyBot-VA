@@ -9,7 +9,7 @@ class Voice_Assistant:
     
     def AI(x):
         palm.configure(api_key='')
-        palm.chat(messages = x)
+        completion = palm.chat(messages = x)
 
         Voice_Assistant.speak(completion.last)
 
